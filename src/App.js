@@ -5,6 +5,7 @@ import Slider from "./Components/Slider";
 import Navbar from "./Components/Navbar";
 import HeroContent from "./Components/heroContent";
 import logo from "./logo.svg";
+import {Route} from "react-router-dom";
 
 import "./styles/base.css";
 
@@ -29,7 +30,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Route path ="Login" element ={ <HeroContent/> } />
+      <Route path ="Home" element ={ <HeroContent/> } />
       <Route path ="Login" element ={ <FormLogin/> } />
       <div className="min-h-screen bg-alles-200">
         <Slider images={sliders} />
