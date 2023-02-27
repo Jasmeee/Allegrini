@@ -2,9 +2,9 @@ import React from "react";
 
 const FormLogin = () => {
   return (
-    <div>
-      <div className="inline-block rounded-[10px] bg-[#F5F4EF] w-full h-100vh] justify-center items-center shadow-2xl">
-        <div className="pt-10 font-poppins text-center text-4xl font-bold text-[#7D794F]">
+    <div className="flex w-full justify-center px-20 h-full items-center">
+      <div className="inline-block rounded-[10px] bg-[#F5F4EF] w-full h-[78%] justify-center items-center shadow-2xl">
+        <div className="pt-32 font-poppins text-center text-4xl font-bold text-[#7D794F]">
           Welcome back!
         </div>
         <div className="font-poppins text-center text-[#7D794F] text-xl pt-2">

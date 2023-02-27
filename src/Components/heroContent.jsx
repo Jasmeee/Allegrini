@@ -1,8 +1,15 @@
 import React from "react";
 import bgImg from "../Assets/bg.svg";
+import { Outlet, useLocation, useNavigate } from "react-router-dom"; 
 // import FormLogin from "./formLogin.js";
 
 const HeroContent = () => {
+
+  const location =  useLocation ().pathname
+  const navigate = useNavigate()
+  console.log(location)
+
+ 
   return (
     <div>
       <div
@@ -10,20 +17,20 @@ const HeroContent = () => {
         style={{ backgroundImage: `url(${bgImg})` }}
       />
       {/*Content*/}
-      <div className="absolute top-0 container mx-auto h-full px-4 items-center flex justify-between">
+      <div className={`absolute top-0 mx-auto h-full w-full px-4 items-center flex justify-end ${location !== "/" && "backdrop-blur-sm"}`}>
         {/*Content kiri*/}
-        <div className="container flex-col items-center w-full font-Poppins text-white pl-20">
+        <div className="flex flex-col flex-1 justify-center w-full h-full font-Poppins text-white pl-20 " onClick={() => navigate("/")} >
           <div className="text-base pb-3">100% Made in Italy top quality.</div>
           <h1 className="text-3xl font-bold pb-6">
             Hotel Amenities Solutions.
           </h1>
-          <button className="items-center flex text-[#7D794F] bg-white border border-white hover:shadow-inner hover:border hover:border-white hover:bg-transparent hover:text-white px-11 py-2">
+          <button className="items-center flex text-[#7D794F] bg-white border border-white hover:shadow-inner hover:border hover:border-white hover:bg-transparent hover:text-white px-11 py-2 self-start">
             Shop
           </button>
         </div>
         {/*Content kanan*/}
-        <div className="top-0 flex justify-end items-center w-[100vw] h-[100vh]">
-          {/* <FormLogin /> */}
+        <div className="flex flex-1 h-full items-center">
+          <Outlet/>
         </div>
       </div>
       {/*arrow bottom*/}

@@ -5,9 +5,15 @@ import Slider from "./Components/Slider";
 import Navbar from "./Components/Navbar";
 import HeroContent from "./Components/heroContent";
 import logo from "./logo.svg";
-import {Route} from "react-router-dom";
-
+import { NewProduk } from "./Components/NewProduk";
 import "./styles/base.css";
+import {Route, Routes } from "react-router-dom";
+import FormSignUp from "./Components/FormSignUp";
+
+
+// app.use("/", router);
+
+
 
 function App() {
   const sliders = [
@@ -30,9 +36,13 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Route path ="Home" element ={ <HeroContent/> } />
-      <Route path ="Login" element ={ <FormLogin/> } />
-      <div className="min-h-screen bg-alles-200">
+      <Routes>
+        <Route path ='/' element ={ <HeroContent/> }>
+          <Route path ='Login' element ={ <FormLogin/> } />
+          <Route path ='SignUp' element ={ <FormSignUp/> } />
+        </Route>
+      </Routes>
+      <div id="slider" className="min-h-screen bg-alles-200">
         <Slider images={sliders} />
       </div>
       <DetailProduk />
